@@ -10,6 +10,11 @@ class JobTitlesController < ApplicationController
 
   def show
     @job_title = JobTitle.find(params[:id])
+    ordered = @job_title.jobs.order('salary DESC')
+    @max = ordered.first
+    @min = ordered.last
+    @average = @job_title.jobs.average(:salary)
+
   end
 
   private

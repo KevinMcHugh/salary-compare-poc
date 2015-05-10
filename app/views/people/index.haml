@@ -9,7 +9,7 @@
 %table{:border => 1, :class => 'table table-striped'}
   %tr
     %th Name
-    %th{:colspan => 2} Actions
+    / %th{:colspan => 2} Actions
   - @people.each do |person|
     %tr
       %td= link_to person.name, person_path(person)

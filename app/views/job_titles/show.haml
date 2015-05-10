@@ -1,4 +1,10 @@
 .container
   %p
-    #{@job_title.name}
-  / %p= link_to 'Edit', edit_person_path(@person), class: 'btn'
+    %h3 #{@job_title.name}
+    %p= link_to("Minimum: $#{@min.salary}", job_path(@min.id))
+    %p= link_to("Maximum: $#{@max.salary}", job_path(@max.id))
+    %p= "Average: $#{@average}"
+    %h4 See Jobs At:
+    - @job_title.jobs.each do |job|
+      %p= link_to(job.employer.name, job_path(job.id))
+

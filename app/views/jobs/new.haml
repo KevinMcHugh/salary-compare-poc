@@ -5,6 +5,10 @@
     %p
     = f.select(:job_title_id, options_for_select(JobTitle.all.map {|jt| [jt.name, jt.id]}), class: 'form-control')
     %p
+    = f.label :employer
+    %p
+    = f.select(:employer_id, options_for_select(Employer.all.map {|e| [e.name, e.id]}), class: 'form-control')
+    %p
     = f.label :person
     %p
     = f.select(:person_id, options_for_select(Person.all.map {|p| [p.name, p.id]}), class: 'form-control')

@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.create(job_params)
-    redirect_to jobs_path
+    redirect_to person_path(job_params[:person_id])
   end
 
   def show
@@ -18,6 +18,6 @@ class JobsController < ApplicationController
   end
 
   def allowed_params
-   [:name, :employer_id, :person_id, :job_title_id]
+   [:name, :employer_id, :person_id, :job_title_id, :salary]
   end
 end
