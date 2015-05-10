@@ -3,9 +3,11 @@
 %table{:border => 1, :class => 'table table-striped'}
   %tr
     %th Name
+    %th Employer
   - @employers.each do |employer|
     %tr
       %td= link_to employer.name, employer_path(employer)
+      %td= employer.average_salary
       / %td= link_to 'Edit', edit_person_path(person), {class: 'btn'}
       / %td= link_to 'Delete', person_path(person), {method: :delete, class: 'btn btn-warning'}
 
