@@ -2,8 +2,8 @@
   %p
     #{@person.name}
   - @person.jobs.each do |job|
-    %p= link_to(job.job_title.name, job_title_path(job.job_title.id))
-    %p= link_to(job.employer.name, employer_path(job.employer.id))
+    %p= link_to(job.job_title.try(:name), job_title_path(job.job_title.id))
+    %p= link_to(job.employer.try(:name), employer_path(job.employer.id))
     %p= "Salary: $#{job.salary}"
     %br
 

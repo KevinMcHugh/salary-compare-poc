@@ -13,8 +13,7 @@ class JobTitlesController < ApplicationController
     ordered = @job_title.jobs.order('salary DESC')
     @max = ordered.first
     @min = ordered.last
-    @average = @job_title.jobs.average(:salary)
-
+    @average = @job_title.average_salary
   end
 
   private

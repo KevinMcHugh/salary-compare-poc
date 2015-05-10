@@ -1,18 +1,18 @@
-= link_to 'Create a Job', new_job_path, {class: 'btn'}
-= link_to 'Create a Job Title', new_job_title_path, {class: 'btn'}
-= link_to 'View Employers', employers_path, {class: 'btn'}
-%p
-= link_to 'Create a new person', new_person_path, {class: 'btn'}
-
 %h1 All People
 
 %table{:border => 1, :class => 'table table-striped'}
   %tr
     %th Name
+    %th Title
+    %th Employer
+    %th Salary
     / %th{:colspan => 2} Actions
   - @people.each do |person|
     %tr
       %td= link_to person.name, person_path(person)
+      %td= person.title
+      %td= person.employer
+      %td= person.salary
       / %td= link_to 'Edit', edit_person_path(person), {class: 'btn'}
       / %td= link_to 'Delete', person_path(person), {method: :delete, class: 'btn btn-warning'}
 

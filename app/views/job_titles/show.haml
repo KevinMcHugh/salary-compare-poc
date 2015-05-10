@@ -1,8 +1,8 @@
 .container
   %p
     %h3 #{@job_title.name}
-    %p= link_to("Minimum: $#{@min.salary}", job_path(@min.id))
-    %p= link_to("Maximum: $#{@max.salary}", job_path(@max.id))
+    %p= link_to("Minimum: $#{@min.try(:salary)}", job_path(@min.try(:id)))
+    %p= link_to("Maximum: $#{@max.try(:salary)}", job_path(@max.try(:id)))
     %p= "Average: $#{@average}"
     %h4 See Jobs At:
     - @job_title.jobs.each do |job|
