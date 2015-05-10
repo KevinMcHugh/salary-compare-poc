@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510004638) do
+ActiveRecord::Schema.define(version: 20150510005518) do
 
   create_table "job_titles", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
