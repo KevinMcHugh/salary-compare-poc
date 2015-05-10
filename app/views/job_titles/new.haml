@@ -1,0 +1,8 @@
+.container
+  = form_for :job_title, url: job_titles_path  do |f|
+    %p
+    = f.label :name
+    %br
+    = f.text_field :name
+    %p.button
+    = f.submit :class => "btn btn-primary"
